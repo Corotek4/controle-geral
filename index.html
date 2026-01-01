@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestaurantePro - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+    <script src="js/tesseract.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>RestaurantePro</h1>
+    </div>
+    <nav>
+        <a href="cadastrar.html">Cadastrar Produto</a>
+        <button id="botaoCamera">Cadastrar via Câmera</button>
+    </nav>
+</header>
+
+<main>
+    <!-- Criar categoria -->
+    <section id="categoriaContainer" class="container">
+        <h2>Criar Nova Categoria</h2>
+        <form id="formCategoria">
+            <input type="text" id="novaCategoria" placeholder="Nome da Categoria" required>
+            <button type="submit">Adicionar Categoria</button>
+        </form>
+    </section>
+
+    <!-- Dashboard de produtos -->
+    <section id="dashboard" class="container">
+        <h2>Produtos Cadastrados</h2>
+        <!-- Produtos serão exibidos aqui -->
+    </section>
+
+    <!-- Estatísticas e gráfico -->
+    <section id="estatisticas" class="container">
+        <h2>Estatísticas de Gasto</h2>
+        <p id="totalGasto">Total gasto: R$ 0,00</p>
+        <canvas id="graficoGastos"></canvas>
+    </section>
+</main>
+
+<!-- Câmera e OCR -->
+<section id="cameraContainer" style="display:none;" class="container">
+    <video id="video" width="320" height="240" autoplay></video>
+    <button id="tirarFoto">Tirar Foto</button>
+    <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+    <p id="ocrResultado">Processando...</p>
+    <button id="confirmarOCR" style="display:none;">Confirmar e Salvar Produto</button>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

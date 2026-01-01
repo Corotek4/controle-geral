@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>RestaurantePro</h1>
+    </div>
+    <nav>
+        <a href="index.html">Voltar</a>
+    </nav>
+</header>
+
+<main>
+    <section id="formularioProduto" class="container">
+        <h2>Cadastrar Produto</h2>
+        
+        <!-- Formulário de Cadastro -->
+        <form id="formProduto">
+            <div>
+                Nome: <input type="text" id="nomeProduto" required><br>
+                Preço: <input type="number" id="precoProduto" step="0.01" required><br>
+                Quantidade: <input type="number" id="quantidadeProduto" required><br>
+                Data da Compra: <input type="date" id="dataCompraProduto" required><br>
+                Fornecedor: <input type="text" id="fornecedorProduto" required><br>
+                Categoria:
+                <select id="categoriaProduto" required>
+                    <option value="Carnes">Carnes</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Outros">Outros</option>
+                </select><br>
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+        
+        <br>
+
+        <!-- Seção da Câmera -->
+        <div id="cameraContainer">
+            <h3>Capturar Nota Fiscal</h3>
+            <video id="video" width="300" autoplay></video><br>
+            <button id="tirarFoto">Capturar Foto</button>
+            <canvas id="canvas" style="display:none;"></canvas>
+            <p id="ocrResultado">Processando...</p>
+            <button id="confirmarOCR" style="display:none;">Confirmar e Salvar Produto</button>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section id="estatisticas" class="container">
+        <h2>Estatísticas de Gasto</h2>
+        <p id="totalGasto">Total gasto: R$ 0,00</p>
+        <canvas id="graficoGastos"></canvas>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
